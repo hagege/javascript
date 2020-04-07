@@ -124,7 +124,10 @@ amountStr = amountStr - anzahl*1
 // Das Programm muss nicht perfekt sein. Es reicht, wenn es ungefähr 
 // funktioniert!
 let rechnungsbetrag = 17.00;
-let gesamt = Math.ceil(rechnungsbetrag * 1.1 / 2.5);
+// hier wird gerundet:
+let gesamt = Math.round(rechnungsbetrag * 1.1 / 2.5);
+// besser: immer aufrunden: 
+gesamt = Math.ceil(rechnungsbetrag * 1.1 / 2.5);
 console.log(gesamt);
 gesamt =  gesamt * 2.5;
 console.log("Der Gesamtbetrag beträgt " + gesamt.toFixed(2) + "$");
