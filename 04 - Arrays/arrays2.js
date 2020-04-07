@@ -11,11 +11,42 @@ let students = [
   "Max Mustermann"
 ]
 
+// Art der Variable
+console.log(typeof students);
+
+// ist das ein Array?
+console.log(students instanceof Array);
+
 // Prüfen: Ist ein Element im Array vorhanden?
 console.log(students.indexOf("Max Müller"))
 
 // Wenn ein Element nicht existiert -> -1!
 console.log(students.indexOf("Max Müller!"))
+
+// Wie viele Elemente sind in dem Array?
+console.log("Anzahl:", students.length);
+
+// Elemente anzeigen:
+console.log("Erstes Element [0]:", students[0]);
+// zeigt Fehler, weil das Element nicht existiert:
+console.log("Fünftes Element [5]:", students[5]);
+
+// zusätzliche Elemente anlegen:
+students.push("Joker", "Joker 2");
+console.log(students);
+
+// Elemente löschen:
+// entfernt das letzte eingegebene Element:
+const lastElement = students.pop();
+console.log(students);
+console.log("Letztes Element: ", lastElement);
+
+// Element überschreiben:
+students[0] = "Maximilian Müller";
+
+// entfernt ein spezielles Element:
+students.pop("Joker");
+console.log(students);
 
 // Arrays sortieren
 students.sort()
