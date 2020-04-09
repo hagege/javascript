@@ -37,24 +37,71 @@ let english2 = [
 //    Sprachkurs belegen. Finde dazu heraus, in welchen Sprachkurs
 //    "Paul" belegt hat, und füge sie ans Ende der Teilnehmerliste
 //    zu diesem Kurs hinzu! Verwende dazu nicht die .splice()-Funktion!
+
+// Paul ist im 2. Englischkurs
+console.log(english2.indexOf("Paul"))
+// Anzahl anzeigen
+console.log("Anzahl:", english2.length)
+// Monika zufügen
+english2.push("Monika")
+// Anzahl anzeigen
+console.log("Anzahl:", english2.length)
+
+
 //
 // b) "Günther" hat eben angerufen, und muss seinen Sprachkurs 
 //    absagen. Finde heraus, in welchem Kurs er eingeschrieben war,
 //    ermittle seine Position in der Teilnehmerliste, und entferne
 //    ihn aus der Liste. 
+
+console.log("-".repeat(20))
+// Günther ist im 1. Englischkurs
+console.log(english1.indexOf("Günther"))
+// Position ermitteln
+let position = english1.indexOf("Günther")
+console.log(position)
+// Anzahl anzeigen
+console.log("Anzahl:", english1.length)
+// 1 Element an der 3. Stelle löschen:
+english1.splice(position, 1)
+// Anzahl anzeigen
+console.log("Anzahl:", english1.length)
+
 // 
 //    Stelle sicher, dass "Günther" aus der Liste entfernt wurde - 
 //    geht das, ohne die gesamte Liste per console.log auszugeben?
+// Prüfen, ob Günther noch da ist:
+
+console.log(english1.indexOf("Günther"))
+
+
 //
 // c) Damit vor der Klasse die Anwesenheit kontrolliert werden kann,
 //    müssen die beiden Teilnehmerlisten sortiert werden. Stelle
 //    dies sicher!
+console.log("-".repeat(20))
+english1.sort()
+english2.sort()
+
+
 // 
 // d) Ganz spontan möchte noch "Anton" am Sprachkurs teilnehmen. 
 //    Sein Name beginnt glücklicherweise mit "A"... Füge ihn daher
 //    an den Anfang der Liste vom Sprachkurs "english1" hinzu!
+console.log("-".repeat(20))
+english1.splice(0, 0, "Anton")
+// english1.sort()
+
+
+
+
 // 
 // e) Wie viele Teilnehmer sind jetzt in der Liste "english1" bzw.
 //    "english2"? Versuche erst jetzt, dir die Liste auszugeben und
 //    das Verhalten vom Programm mit console.log-Befehlen nachzu-
 //    vollziehen!
+console.log("-".repeat(20))
+console.log("Anzahl:", english1.length)
+console.log("Anzahl:", english2.length)
+console.log(english1)
+console.log(english2)

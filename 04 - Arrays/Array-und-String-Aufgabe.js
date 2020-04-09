@@ -17,6 +17,16 @@ let sentence = "\x49\x63\x68\x20\x6D\xF6\x63\x68\x74\x65\x20\x4A\x61\x76\x61\x53
 //    finde dann heraus, an welcher Stelle der Teilnehmer "Erika"
 //    im Array vorkommt, entferne diesen Teilnehmer aus dem Array,
 //    und setze die Teilnehmer wieder zurück zu einem Array zusammen!
+
+let array_stud = students.split(", ")
+console.log(array_stud)
+let position = array_stud.indexOf("Erika")
+console.log(position)
+array_stud.splice(position, 1)
+console.log(array_stud.indexOf("Erika"))
+students = array_stud.join(", ")
+console.log(students)
+
 //
 // 2) Die Liste soll jetzt ausgedruckt werden. Zerlege dazu wieder
 //    die Liste in ein Array, und setze sie wieder zu einem String zusammen,
@@ -27,8 +37,26 @@ let sentence = "\x49\x63\x68\x20\x6D\xF6\x63\x68\x74\x65\x20\x4A\x61\x76\x61\x53
 //     - Anton
 //
 //    Tipp: Ein Zeilenumbruch ist ein ganz normales Zeichen - ein \n!
+// in dem Fall nicht nötig: let trenner = "\n"
+// nicht so gut (was macht man bei großer Anzahl)
+/*
+console.log(" - " + array_stud[0])
+console.log(" - " + array_stud[1])
+console.log(" - " + array_stud[2])
+console.log(" - " + array_stud[3])
+*/
+// besser:
+console.log(" - " + array_stud.join("\n - "))
+
+
+
+
+
 // 
 // 3) Zähle die Wörter in der Variable "sentence"! Versuche dabei,
 //    dir den Inhalt der Variable erst nach der Aufgabe anzuschauen!
 //    
 //    Tipp: Du kannst hierfür die .split()-Methode verwenden! Wie?
+// sentence.split(" ") ist dann ein Array, auf das die Methode length angewendet werden:
+console.log(sentence.split(" ").length)
+console.log(sentence)

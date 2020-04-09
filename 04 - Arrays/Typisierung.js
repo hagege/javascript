@@ -9,5 +9,6 @@ let liste = [
   4,
   ["Element 1", "Element 2"]
 ]
-
+console.log(liste[1,0])
+console.log(liste[2])
 console.log(liste[2][0])
