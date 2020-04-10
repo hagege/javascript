@@ -4,6 +4,9 @@
 
 // let x = 5 + 6
 
+let c = true
+let d = false
+
 let greeting = "Hallo Welt"
 
 let a = (greeting + "!") === "Hallo Welt!"

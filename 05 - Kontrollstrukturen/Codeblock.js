@@ -1,6 +1,6 @@
 "use strict"
 
-let a = 41
+let a = 42
 
 /*
 {
