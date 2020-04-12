@@ -7,7 +7,10 @@ console.log("!false", !false)
 // console.log(!(42 === 13))
 // console.log(42 !== 13)
 
-
+let a = false
+if (!a) {
+  console.log("a:", a)
+}
 
 // Logisches UND
 console.log("true && true:", true && true)

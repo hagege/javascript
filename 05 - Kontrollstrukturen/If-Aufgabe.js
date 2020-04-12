@@ -20,10 +20,19 @@ let students2 = ["Tobias", "Anna", "Michelle"]
 //  - Bei student = "Torsten": "Torsten ist eingeschrieben"
 //  - Bei student = "Felix": "Felix ist nicht eingeschrieben"
 
-let student = "Torsten"
+let student = "Felix"
 
 // Schreibe deinen Code hier
-
+if (students1.indexOf(student) !== -1 || students2.indexOf(student) !== -1){
+    console.log(student + " ist eingeschrieben")
+} else {
+    console.log(student + " ist nicht eingeschrieben")
+}
+/* nicht notwendig:
+if (students1.indexOf(student) === -1 && students2.indexOf(student) === -1){
+    console.log(student + " ist nicht eingeschrieben")
+} 
+*/
 
 // Aufgabe 2)
 //
@@ -39,6 +48,16 @@ let student = "Torsten"
 let newStudent = "Tom"
 
 // Schreibe deinen Code hier
+if (students1.length > students2.length){
+    // zusätzliche Elemente anlegen:
+    students2.push("Tom");
+    console.log (students1)
+} else {
+    students1.push("Tom");
+    console.log (students2)
+}
+
+
 
  
 // Aufgabe 3)
@@ -57,6 +76,19 @@ let newStudent = "Tom"
 
 
 // Schreibe deinen Code hier
+console.log("Kurs1: ", students1);
+console.log("Kurs2: ", students2);
+student = "Tobias"
+let remove_position = students1.indexOf(student)
+if (remove_position !== -1 ){
+    students1.splice(remove_position, 1)
+    console.log("Kurs1: ", students1);
+}
+remove_position = students2.indexOf(student) 
+if (remove_position !== -1 ){    
+    students2.splice(remove_position, 1)
+    console.log("Kurs2: ", students2);
+} 
 
 
 
@@ -83,3 +115,11 @@ let newStudent = "Tom"
 // Tipp: Verwende hierzu ein if...else if-Konstrukt!
 //
 let numberOfStudents = 5
+
+if (numberOfStudents === 1) {
+    console.log("Der Sprachkurs kostet 40€ / Stunde / Teilnehmer.")
+} else if (numberOfStudents >= 2 && numberOfStudents <= 5) {
+    console.log("Bei 2-5 Teilnehmern: 25€ / Stunde / Teilnehmer")
+} else if (numberOfStudents >= 6 ) {
+    console.log("Bei 6 oder mehr Teilnehmern: 15€ / Stunde / Teilnehmer")
+}    
