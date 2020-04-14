@@ -8,6 +8,10 @@
 // Schreibe ein kleines Programm, was dies für den Schüler 
 // erledigt ;)
 
+let anzahl = 25
+for (let zaehler = 1; zaehler <= anzahl; zaehler++ ){
+  console.log(zaehler, ".: Ich soll im Unterricht nicht stören")
+}
 
 // Aufgabe 2: Sprachschule
 //
@@ -28,8 +32,25 @@ let students = [
   "Franziska", 
   "Bernd", 
   "Tobias", 
-  "Andreas"
+  "Andreas",
+  "Tatjana",
+  "Willi",
+  "Heinz"
 ]
+
+let studentsAnzahl = students.length
+console.log(studentsAnzahl)
+let students1 = []
+let students2 = []
+for (let zaehler = 0; zaehler < studentsAnzahl; zaehler++ ){
+   if (zaehler%2 === 1){
+     students1.push(students[zaehler])
+   } else {
+    students2.push(students[zaehler])
+   }
+}
+console.log("students1:", students1)
+console.log("students2:", students2)
 
 // Aufgabe 3
 // 
@@ -77,6 +98,48 @@ let prices = [
   700
 ]
 
+// a)
+let summe = 0
+let chooseLevel = "A2"
+for (let zaehlLevel = 0; zaehlLevel < levels.length; zaehlLevel++){
+  if (levels[zaehlLevel] <= chooseLevel){
+    summe = summe + prices[zaehlLevel]
+  }
+}
+console.log("Summe: ", summe)
+
+// b)
+
+
+
+summe = 0
+let LevelBegin = "B1"
+let LevelEnd = "C2"
+for (let zaehlLevel = 0; zaehlLevel < levels.length; zaehlLevel++){
+  if (levels[zaehlLevel] >= LevelBegin && levels[zaehlLevel] <= LevelEnd){
+    summe = summe + prices[zaehlLevel]
+  }
+}
+console.log("Summe 2: ", summe)
+
+
+// c)
+
+summe = 0
+LevelBegin = "A1"
+LevelEnd = "C2"
+let maxPreis = 1500
+let MaxLevel = "A1"
+for (let zaehlLevel = 0; zaehlLevel < levels.length; zaehlLevel++){
+  if (summe + prices[zaehlLevel] > 1500){
+      MaxLevel = levels[zaehlLevel - 1]
+      break
+  }
+  summe = summe + prices[zaehlLevel]
+}
+console.log("Summe 3: ", summe, "Max. Level: ", MaxLevel)
+
+
 // Aufgabe 4
 //
 // Unsere Sprachschule wächst dank unserer Hilfe immer weiter.
@@ -101,6 +164,15 @@ let studentsPerCourse = [
 // Aufgaben:
 // 
 //  a) Berechne die Anzahl der Teilnehmer in allen Kursen zusammen!
+
+debugger
+
+let AnzStudents = 0
+for (const course of studentsPerCourse){
+    AnzStudents += course.length
+}
+console.log("Anzahl Studenten: ", AnzStudents)
+
 // 
 //  b) Der Teilnehmer "Max" musste seinen Sprachkurs absagen. Schreibe
 //     ein Programm, was ihn aus seinem Kurs entfernt. Dieses Programm
@@ -113,6 +185,26 @@ let studentsPerCourse = [
 //
 // Wichtig: Schreibe den Code so, dass er später auch mit 3 oder mehr
 // Sprachkursen zurechtkommt!
+
+let NameStudent = "Jens"
+for (const course of studentsPerCourse){
+    if  (course.indexOf(NameStudent) === -1){
+      console.log ("Student " + NameStudent + " ist nicht in Kurs " + course)
+    }
+    if (course.indexOf(NameStudent) !== -1){
+      let position = course.indexOf(NameStudent)
+      course.splice(position, 1)
+      console.log ("Student " + NameStudent + " ist aus dem Kurs " + course + " ausgetragen worden.")
+    }
+}
+
+AnzStudents = 0
+for (const course of studentsPerCourse){
+    AnzStudents += course.length
+}
+console.log("Anzahl Studenten: ", AnzStudents)
+
+
 //
 // Bonus-Aufgabe:
 // 

@@ -13,7 +13,7 @@ for (const i in items) {
   console.log("i:", typeof i, i)  
 }
 
-for (let i = 0; i < items.length; i++) {
+for (let i = 0; i <= items.length; i++) {
   if (i === 0) {
     continue
   }
