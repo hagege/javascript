@@ -132,6 +132,7 @@ for (const i in levels) {
   priceSoFar += price
 }
 
+console.log("-".repeat(40))
 // Aufgabe 4
 //
 // Unsere Sprachschule wächst dank unserer Hilfe immer weiter.
@@ -159,6 +160,7 @@ let studentsPerCourse = [
 
 let num = 0
 for (const course of studentsPerCourse) {
+  console.log("Kurs: ", course)
   num += course.length
 }
 console.log("Aufgabe 4, a:", num)
@@ -184,6 +186,7 @@ for (const course of studentsPerCourse) {
     course.splice(posStudentToCancel, 1)
     
     studentFound = true
+    // wenn der Teilnehmer gefunden und entfernt wurde, dann wird durch break die Schleife abgebrochen
     break
   }
 }
@@ -204,14 +207,17 @@ if (studentFound === false) {
 //     für eine Sprachschule akzeptabel?
 
 let indexLeastStudents = -1
+// i bezieht sich auf den jeweiligen Kurs (entweder 0 oder 1)
 for (const i in studentsPerCourse) {
   const course = studentsPerCourse[i]
-
+  // der erste Kurs mit dem Index 0 ist erst mal der beste Kurs, der gefunden wurde.
   if (indexLeastStudents === -1) {
     indexLeastStudents = i
   }
 
   else {
+    // wenn die Länge des bisher besten Kurses (indexLeastStudents) größer ist als die Länge des aktuellen Kurses, 
+    // dann ist der aktuelle Kurs besser geeignet, weil da ja weniger Teilnehmer in dem Kurs sind.
     if (course.length < studentsPerCourse[indexLeastStudents].length) {
       indexLeastStudents = i
     }

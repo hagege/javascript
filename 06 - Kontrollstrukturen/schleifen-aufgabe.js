@@ -68,17 +68,6 @@ console.log("students2:", students2)
 // sodass wir z.B. ein Level A3 noch dazwischen schalten können, indem
 // wir nur die Listen "levels" und "prices" anpassen!
 // 
-// a) Wie viel kostet es für einen Teilnehmer, die Sprache bis 
-//    einschließlich des Levels "C1" zu lernen? Schreibe deinen Code so
-//    universell, dass er auch mit anderen Level-Bezeichnungen / Preisen
-//    zurecht käme.
-//
-// b) Wie viel kostet es, einen Teilnehmer von (einschließlich) A2 bis
-//    einschließlich C1 zu bringen?
-// 
-// c) Ein Teilnehmer möchte (maximal) 1500€ in seine Sprachkenntnisse 
-//    investieren. Bis zu welchem Level (bei A1 angefangen) können wir
-//    ihn dafür unterrichten?
 
 let levels = [
   "A1",
@@ -98,7 +87,12 @@ let prices = [
   700
 ]
 
-// a)
+
+// a) Wie viel kostet es für einen Teilnehmer, die Sprache bis 
+//    einschließlich des Levels "C1" zu lernen? Schreibe deinen Code so
+//    universell, dass er auch mit anderen Level-Bezeichnungen / Preisen
+//    zurecht käme.
+
 let summe = 0
 let chooseLevel = "A2"
 for (let zaehlLevel = 0; zaehlLevel < levels.length; zaehlLevel++){
@@ -108,9 +102,9 @@ for (let zaehlLevel = 0; zaehlLevel < levels.length; zaehlLevel++){
 }
 console.log("Summe: ", summe)
 
-// b)
-
-
+//
+// b) Wie viel kostet es, einen Teilnehmer von (einschließlich) A2 bis
+//    einschließlich C1 zu bringen?
 
 summe = 0
 let LevelBegin = "B1"
@@ -123,7 +117,11 @@ for (let zaehlLevel = 0; zaehlLevel < levels.length; zaehlLevel++){
 console.log("Summe 2: ", summe)
 
 
-// c)
+// 
+// c) Ein Teilnehmer möchte (maximal) 1500€ in seine Sprachkenntnisse 
+//    investieren. Bis zu welchem Level (bei A1 angefangen) können wir
+//    ihn dafür unterrichten?
+
 
 summe = 0
 LevelBegin = "A1"
@@ -215,3 +213,42 @@ console.log("Anzahl Studenten: ", AnzStudents)
 //     Wie geht dein Programm mit dem Fall um, dass 2 Sprachkurse
 //     genau gleich viele Teilnehmer haben? Ist das Verhalten
 //     für eine Sprachschule akzeptabel?
+
+
+let AnzStudents1 = 0
+let AnzStudents2 = 0
+let course1 = studentsPerCourse[0]
+let course2 = studentsPerCourse[1]
+console.log(course1)
+console.log(course2)
+
+for (const course of course1){
+  AnzStudents1 = AnzStudents1 + 1
+}
+for (const course of course2){
+  AnzStudents2 = AnzStudents2 + 1
+}
+console.log("Anzahl Studenten 1: ", AnzStudents1, course1)
+console.log("Anzahl Studenten 2: ", AnzStudents2, course2)
+
+NameStudent = "Jens"
+if (AnzStudents1 > AnzStudents2) {
+  studentsPerCourse[0].push(NameStudent)
+} else {
+  studentsPerCourse[1].push(NameStudent)
+}
+console.log(studentsPerCourse[0])
+console.log(studentsPerCourse[1])
+
+/*
+for (const course of studentsPerCourse){
+    if  (course.indexOf(NameStudent) === -1){
+      console.log ("Student " + NameStudent + " ist nicht in Kurs " + course)
+    }
+    if (course.indexOf(NameStudent) !== -1){
+      let position = course.indexOf(NameStudent)
+      course.splice(position, 1)
+      console.log ("Student " + NameStudent + " ist aus dem Kurs " + course + " ausgetragen worden.")
+    }
+}
+*/
