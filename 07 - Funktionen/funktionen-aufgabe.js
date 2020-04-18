@@ -1,8 +1,8 @@
 "use strict"
 
 const courses = [
-  ["Christian", "Annika"], // Kurs 1 mit 2 Teilnehmern
-  ["Julian", "Lisa", "Tobias"] // Kurs 2 mit 3 Teilnehmern
+  ["Christian", "Annika", "Maria"], // Kurs 1 mit 2 Teilnehmern
+  ["Julian", "Lisa"] // Kurs 2 mit 3 Teilnehmern
 ]
 
 // Aufgabe 1
@@ -26,11 +26,16 @@ const courses = [
 //      >> console.log(getSmallestCourse()) 
 //      >> Rückgabewert: 0, weil der 1. Kurs (Kurs mit Index 0) am 
 //                       wenigsten Teilnehmer hat
-
-function getSmallestCourse() {
   // Ergänze den Code hier! Du darfst die Variable "courses"
   // von außerhalt hier drinnen weiterverwenden!
+function getSmallestCourse() {
+
+  if (courses[0].length < courses[1].length) {
+    return (0)
+  }
+  return (1)
 }
+
 
 // 1b) Ergänze die Funktion, die einen Teilnehmer in den Kurs
 //     einfügt, der bisher am wenigsten Teilnehmer hat!
@@ -40,9 +45,14 @@ function addStudent(name) {
   // Hier ermitteln wir, welcher Kurs bisher am wenigsten
   // Teilnehmer hat!
   const smallestCourse = getSmallestCourse()
-
+  courses[smallestCourse].push(name)
+return
   // Ergänze den Code hier!
 }
+
+console.log("Der kleinere Kurs ist Kurs:", getSmallestCourse(courses))
+addStudent("Miriam")
+console.log(courses)
 
 
 // Aufgabe 2
@@ -98,9 +108,20 @@ const LANGUAGE_EN = [
 //     
 //     >> translateWord("Sprachkurs")
 //     >> // Rückgabewert: "language course"
-function translateWord(word) {
 
+
+function translateWord(word) {
+  word = word.toLowerCase()
+  let english_word = word
+  if (LANGUAGE_DE.indexOf(word) !== -1) {
+    // Wort wurde gefunden
+    let position = LANGUAGE_DE.indexOf(word)
+    english_word = LANGUAGE_EN[position]
+  }
+  return english_word
 }
+
+console.log(translateWord("Mikrofon"))
 
 // 2b) Schreibe eine Funktion, die den ersten Buchstaben eines
 //     Wortes in Großbuchstaben umwandeln kann.
@@ -121,8 +142,19 @@ function translateWord(word) {
 //     Das Ergebnis soll per "return" zurückgegeben werden
 
 function ucFirst(word) {
-
+  // erster Buchstabe:
+  let letter1 = word.charAt(0);
+  // in Großbuchstaben:
+  letter1 = letter1.toUpperCase()
+  let restword = word.slice(1)
+  word = letter1 + restword
+  return word
 }
+
+console.log(ucFirst("weihnachten"));
+
+
+
 
 // 2c) Aufbauend den Funktionen aus 2a und 2b, entwickle eine weitere
 //     Funktion, die einen ganzen Satz übersetzen kann!
@@ -147,5 +179,12 @@ function ucFirst(word) {
 //      C++ oder Python entwickeln als in JavaScript.
 
 function translateSentence(sentence) {
-
+  let words = sentence.split(" ")
+  let satz = ''
+  for (const singleword in words){
+    satz = satz + translateWord(ucFirst(words[singleword])) + " "
+  }
+  return(satz)
 }
+
+console.log(translateSentence("Hallo und willkommen beim Sprachkurs"))

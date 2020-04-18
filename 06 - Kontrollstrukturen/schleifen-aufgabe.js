@@ -163,7 +163,6 @@ let studentsPerCourse = [
 // 
 //  a) Berechne die Anzahl der Teilnehmer in allen Kursen zusammen!
 
-debugger
 
 let AnzStudents = 0
 for (const course of studentsPerCourse){
