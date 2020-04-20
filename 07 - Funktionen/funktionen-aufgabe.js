@@ -28,12 +28,33 @@ const courses = [
 //                       wenigsten Teilnehmer hat
   // Ergänze den Code hier! Du darfst die Variable "courses"
   // von außerhalt hier drinnen weiterverwenden!
-function getSmallestCourse() {
+/* meine Lösung:
+  function getSmallestCourse() {
 
   if (courses[0].length < courses[1].length) {
     return (0)
   }
   return (1)
+}
+*/
+
+function getSmallestCourse() {
+  // Ergänze den Code hier! Du darfst die Variable "courses"
+  // von außerhalt hier drinnen weiterverwenden!
+
+  let smallestCourse = -1
+  let smallestIndex = -1
+
+  for (let i in courses) {
+    let course = courses[i]
+    // die erste Bedingung wird nur beim ersten Mal true, danach wird nur noch die zweite Bedingung geprüft:
+    if (smallestIndex === -1 || course.length < smallestCourse) {
+      smallestIndex = i
+      smallestCourse = course.length
+    }
+  }
+
+  return smallestIndex
 }
 
 
@@ -111,8 +132,8 @@ const LANGUAGE_EN = [
 
 
 function translateWord(word) {
-  word = word.toLowerCase()
   let english_word = word
+  word = word.toLowerCase()
   if (LANGUAGE_DE.indexOf(word) !== -1) {
     // Wort wurde gefunden
     let position = LANGUAGE_DE.indexOf(word)
@@ -122,6 +143,8 @@ function translateWord(word) {
 }
 
 console.log(translateWord("Mikrofon"))
+console.log(translateWord("Sprachkurs"))
+console.log(translateWord("Sprachkurs2"))
 
 // 2b) Schreibe eine Funktion, die den ersten Buchstaben eines
 //     Wortes in Großbuchstaben umwandeln kann.
@@ -182,9 +205,9 @@ function translateSentence(sentence) {
   let words = sentence.split(" ")
   let satz = ''
   for (const singleword in words){
-    satz = satz + translateWord(ucFirst(words[singleword])) + " "
+    satz = satz + translateWord(words[singleword]) + " "
   }
-  return(satz)
+  return(ucFirst(satz))
 }
 
 console.log(translateSentence("Hallo und willkommen beim Sprachkurs"))

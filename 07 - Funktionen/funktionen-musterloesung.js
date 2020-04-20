@@ -27,6 +27,12 @@ const courses = [
 //      >> Rückgabewert: 0, weil der 1. Kurs (Kurs mit Index 0) am 
 //                       wenigsten Teilnehmer hat
 
+/**
+ * Ermittelt den Index des kleinsten Kurs aus einer Liste von Kursen zurück
+ * 
+ * @returns {number} Gibt den Kurs als string zurück
+ */
+
 function getSmallestCourse() {
   // Ergänze den Code hier! Du darfst die Variable "courses"
   // von außerhalt hier drinnen weiterverwenden!
@@ -38,7 +44,7 @@ function getSmallestCourse() {
     let course = courses[i]
 
     if (smallestIndex === -1 || course.length < smallestCourse) {
-      smallestIndex = i
+      smallestIndex = parseInt(i,10)
       smallestCourse = course.length
     }
   }
@@ -52,6 +58,14 @@ console.log("getSmallestCourse()", getSmallestCourse())
 //     einfügt, der bisher am wenigsten Teilnehmer hat!
 //     Wir nutzen hier das Ergebnis aus Teilaufgabe 1a weiter!
 
+
+
+/**
+ * Fügt Teilnehmer dazu
+ * 
+ * @param {string} name Der Teilnehmer soll hinzugefügt werden
+ * @returns {void}
+ */
 function addStudent(name) {
   // Hier ermitteln wir, welcher Kurs bisher am wenigsten
   // Teilnehmer hat!
@@ -120,6 +134,15 @@ const LANGUAGE_EN = [
 //     
 //     >> translateWord("Sprachkurs")
 //     >> // Rückgabewert: "language course"
+
+/**
+ * Holt aus einer Liste das übersetzte Wort
+ * 
+ * @param {string} sentence Das Wort, das übersetzt werden soll
+ * 
+ * @returns{string} Gibt das übersetzte Wort zurück
+ */
+
 function translateWord(word) {
   word = word.toLowerCase()
 

@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\07 - Funktionen\\funktionen-aufgabe.js"
+            "program": "${workspaceFolder}\\08 - Objekte\\objekte.js"
         }
     ]
 }
