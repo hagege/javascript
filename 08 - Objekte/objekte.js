@@ -7,6 +7,17 @@ const student = {
   "subject": "Englisch"
 }
 */
+
+/* Array:
+const student = [
+  "Max Mustermann",
+  21,
+  "Englisch"
+]
+
+
+*/ 
+/* Objekt  */
 console.log("Objekt: ")
 const student = {
   // Schlüssel name: //
@@ -31,4 +42,5 @@ const student_array = [
 ]
 
 console.log(student_array)
-
+console.log(student_array[0])
+console.log(student_array[1])

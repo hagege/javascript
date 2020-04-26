@@ -50,6 +50,12 @@ const LANGUAGE_EN = [
 ]
 
 let DE_TO_EN = {}
+for (const anzahl in LANGUAGE_DE) {
+  DE_TO_EN[LANGUAGE_DE[anzahl]] = LANGUAGE_EN[anzahl]
+}
+console.log("Das neue Objekt: ", DE_TO_EN)
+console.log(DE_TO_EN["hallo"])
+
 
 // Schreibe deinen Code hier, der das Objekt "DE_TO_EN" befüllt!
 
@@ -70,11 +76,46 @@ const students = [
 //     Der Chef beauftragt uns / dich, das durchschnittliche Alter
 //     der Teilnehmer zu berechnen. Diese Berechnung soll natürlich
 //     mit Hilfe von JavaScript-Code durchgeführt werden!
+let sum_age = 0
+let items = 0
+for (const anzahl in students) {
+  sum_age = sum_age + students[anzahl].age
+  // an sich bei length überflüssing: */
+  items ++
+}
+console.log("Summe Alter: ", sum_age )
+/* einfacher ist die Anzahl der Elemente (length) */
+/* in dem Fall brauche ich die Variable "items" nicht */
+let durchschnitt = sum_age/students.length
+console.log("Durchschnitt: ", durchschnitt)
+
+
+
+
 // 
 // 2b) Füge einen neuen Teilnehmer mit dem Namen "Christian Schmidt"
 //     hinzu. Lasse bei diesem Teilnehmer die Eigenschaft "age" weg - 
 //     wir wissen das Alter noch nicht. 
 // 
+students.push({
+  firstname: "Christian", 
+  lastname: "Schmidt"
+})
+console.log(students)
+sum_age = 0
+items = 0
+for (const anzahl in students) {
+  /* sicherheitshalber abfragen, ob die Eigenschaft "age" angegeben ist: */
+  if (students[anzahl].age) {
+    sum_age = sum_age + students[anzahl].age
+    items ++
+  }
+}
+console.log("Summe Alter: ", sum_age )
+durchschnitt = sum_age/items
+console.log("Durchschnitt: ", durchschnitt)
+
+
 // 2c) Funktioniert der Code aus Teilaufgabe 2a) noch, auch wenn er
 //     auf der jetzt aktualisierten Teilnehmerliste ausgeführt wird?
 //     Wenn nicht, passe den Code so an, dass er damit klarkommt,

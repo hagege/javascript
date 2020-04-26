@@ -4,7 +4,7 @@ const student = {
   name: "Max Mustermann",
   age: 21,
   enrolled: false,
-  numberOfCourses: 0
+  numberOfCourses: 0,
 }
 
 if (student.numberOfCourses) {
