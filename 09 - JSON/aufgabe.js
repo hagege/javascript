@@ -50,10 +50,11 @@ let kg = 0
 for (const launch of launches) {
   // 2018 und erfolgreich
   if (launch["launch_year"] === "2018" && launch["launch_success"]) {
-      // secondStage holen
+      // secondStage (ist eine Untereigenschaft von rocket) holen
       const secondStage = launch["rocket"]["second_stage"]
       for (const payload of secondStage["payloads"]){
         kg = kg + payload["payload_mass_kg"]
+        console.log("kg: (", payload["payload_mass_kg"], ") ", kg)
       }
   }
 }

@@ -1,4 +1,4 @@
-"use strict"
+node"use strict"
 
 let plus5
 
