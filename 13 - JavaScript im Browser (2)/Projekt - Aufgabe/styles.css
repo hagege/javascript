@@ -23,6 +23,8 @@ body {
 a[data-help] {
   color: black;
   text-decoration: none;
+  /* Klickfläche vergrößern */
+  padding-left: 20px;
 }
 
 a[data-help]:hover {
@@ -30,5 +32,16 @@ a[data-help]:hover {
 }
 
 .card-header .fas {
-
+  display: visible;
 }
+
+/* Klasse, damit der Body nicht angezeigt wird: */
+.d-none {
+  display: none;
+}
+
+/* Klasse, damit der Pfeil geändert wird: 
+.card-toggle-icon {
+  display: inherit;
+}
+*/
