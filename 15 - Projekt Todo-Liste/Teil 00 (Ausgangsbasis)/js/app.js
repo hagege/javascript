@@ -1,21 +1,39 @@
 'use strict';
 const KEY_ENTER = 13
 
+
+/* Probleme derzeit:
+1. Neue Elemente können nicht gelöscht werden
+2. Click auf ein Element funktioniert nicht
+*/
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    // hier fehlt noch die richtige Klasse (bei Klick auf ENTER):
-    // const addToDoButton = document.getElementById("add-student")
-    // const fieldInput = document.querySelectorAll("[class='new-todo']")
     const fieldInputs = document.getElementsByClassName("new-todo")
-            // über "X" wird das jeweilige Element gelöscht.
+          // über "X" wird das jeweilige Element gelöscht.
     const closeButtons = document.querySelectorAll("[class='destroy']")
+
+    /* funktioniert: */
+    const liElements = document.getElementsByTagName("li")
+
+    const removeLiElement = (liElement) => {
+        liElement.remove()
+    }
+
+    for (const liElement of liElements) {
+        liElement.addEventListener("click", () => {
+          removeLiElement(liElement)
+      })      
+    }
     
-    // das funktioniert schon (Remove Todo):  
+    /* das funktioniert auch, aber nicht bei neuen Todos (Remove Todo):  
     for (const closeButton of closeButtons) {
           closeButton.addEventListener("click", () => {
             // besser das hier (weil das (Eltern-)Element komplett gelöscht wird):
             closeButton.parentElement.remove()
           })
     }
+    */
     // eigentlich unsinnig, weil nur ein Input besteht:
     for (const fieldInput of fieldInputs) {
       fieldInput.addEventListener("keypress", (event) => {
@@ -57,8 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
           // strongElement.appendChild(document.createTextNode("Hallo Welt"))
           
           ulElement.appendChild(liElement)
-        
-          
+
+          /* das funktioniert: */
+          liElement.addEventListener("click", () => {
+            removeLiElement(liElement)
+          }) 
+                
         }
       })
   }
