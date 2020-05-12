@@ -1,0 +1,3 @@
+Element entfernen: wenn auf X geklickt wird, soll li entfernt werden - siehe 131
+Element anhängen: wenn ein Todo erfasst wird und ENTER (Taste 13) geklickt wird - siehe 132, 133, 138
+Häkchen setzen: siehe 137?
