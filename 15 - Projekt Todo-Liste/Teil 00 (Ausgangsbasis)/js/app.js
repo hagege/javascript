@@ -12,14 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const fieldInputs = document.getElementsByClassName("new-todo")
           // über "X" wird das jeweilige Element gelöscht.
     const closeButtons = document.querySelectorAll("[class='destroy']")
+
     /* funktioniert: */
     const liElements = document.getElementsByTagName("li")
-    
-    // ItemLeft ist ein Array. Damit muss das Element (hier 0) gewählt werden
-    const ItemLeft = document.getElementsByClassName("anzahl")
-    
-    let currentCounter = parseInt(ItemLeft[0].innerText, 10)
-    console.log(currentCounter)
 
     const removeLiElement = (liElement) => {
         liElement.remove()
@@ -28,8 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const liElement of liElements) {
         liElement.addEventListener("click", () => {
           removeLiElement(liElement)
-          currentCounter --
-          ItemLeft[0].innerText = currentCounter
       })      
     }
     
@@ -46,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       fieldInput.addEventListener("keypress", (event) => {
         // console.log("fieldInputs: ", fieldInputs)
         // console.log(event)
-        // console.log("ItemLeft: ", ItemLeft)
         if (event.keyCode === KEY_ENTER) {
           // alert("Enter wurde gedrückt!")
           // Erst das Listenelement komplett erstellen
@@ -83,14 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
           // strongElement.appendChild(document.createTextNode("Hallo Welt"))
           
           ulElement.appendChild(liElement)
-          currentCounter ++
-          ItemLeft[0].innerText = currentCounter
 
           /* das funktioniert: */
           liElement.addEventListener("click", () => {
             removeLiElement(liElement)
-            currentCounter --
-            ItemLeft[0].innerText = currentCounter
           }) 
                 
         }
