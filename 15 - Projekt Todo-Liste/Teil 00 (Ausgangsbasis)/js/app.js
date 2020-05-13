@@ -14,17 +14,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButtons = document.querySelectorAll("[class='destroy']")
     /* funktioniert: */
     const liElements = document.getElementsByTagName("li")
-    
+
     // ItemLeft ist ein Array. Damit muss das Element (hier 0) gewählt werden
     const ItemLeft = document.getElementsByClassName("anzahl")
     
     let currentCounter = parseInt(ItemLeft[0].innerText, 10)
-    console.log(currentCounter)
 
     const removeLiElement = (liElement) => {
-        liElement.remove()
+      liElement.remove()
     }
-
+    for (const closeButton of closeButtons) {
+      closeButton.addEventListener("click", (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        for (const liElement of liElements) {
+          liElement.addEventListener("click", () => {
+          removeLiElement(liElement)
+          currentCounter --
+          ItemLeft[0].innerText = currentCounter
+          })  
+        }
+      })
+    } 
+    /*
     for (const liElement of liElements) {
         liElement.addEventListener("click", () => {
           removeLiElement(liElement)
@@ -32,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ItemLeft[0].innerText = currentCounter
       })      
     }
+    */
     
     /* das funktioniert auch, aber nicht bei neuen Todos (Remove Todo):  
     for (const closeButton of closeButtons) {
