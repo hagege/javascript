@@ -16,11 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	const newTodoElement = document.querySelector(".new-todo")
 	const todoListElement = document.querySelector(".todo-list")
 
+	
+
+	/* anonyme Funktion, die weiter unten verwendet wird:*/
 	const addCallbacksForLi = (liElement) => {
+		// zeigt alle Elemente mit den Callbacks
+		console.log(liElement.innerHTML)
+		
 		const checkboxElement = liElement.querySelector(".toggle")
 		const destroyButtonElement = liElement.querySelector(".destroy")
 
+		// Klasse wird gesetzt oder wieder weggenommen:
 		checkboxElement.addEventListener("change", () => {
+			console.log("changed")
+			
 			if (checkboxElement.checked) {
 				liElement.classList.add("completed")
 			} else {
@@ -31,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		destroyButtonElement.addEventListener("click", () => {
 			liElement.remove()
 		})
+	
 	}
 
 

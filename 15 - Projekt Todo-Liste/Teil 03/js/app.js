@@ -16,9 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	const newTodoElement = document.querySelector(".new-todo")
 	const todoListElement = document.querySelector(".todo-list")
 	const footerElement = document.querySelector(".footer")
+
+	// soll ausschließlich für dieses Element wirken (daher zusätzlich strong)
 	const todoCountElement = document.querySelector(".todo-count strong")
 
+	// Funktion für Fußzeile einblenden, wenn Todo-Elemente da sind
 	const refreshFooter = () => {
+		// es sind keine Todos da:
 		if (todoListElement.children.length === 0) {
 			footerElement.style.display = "none"
 		} else {
@@ -28,14 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
 		/*
 		let todoCounter = 0
 		for (const todoListItem of todoListElement.children) {
+			// enthält nicht die Klasse completed
 			if (!todoListItem.classList.contains("completed")) {
 				todoCounter++
 			}
 		}
 		*/
+
+		// kompkater für die FOR-Schleife ist das hier in einer Zeile:
 		let todoCounter = todoListElement.querySelectorAll("li:not(.completed)").length
 		todoCountElement.innerText = todoCounter
 	}
+
+	// Funktion für Fußzeilen direkt am Anfang ausführen
 	refreshFooter()
 
 	const addCallbacksForLi = (liElement) => {

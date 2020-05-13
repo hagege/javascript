@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		let todoCounter = todoListElement.querySelectorAll("li:not(.completed)").length
 		todoCountElement.innerText = todoCounter
 
+		// Button "CLear Completed" ausblenden, wenn keine ToDos gibt, die Completed sind:
 		let completedCounter = todoListElement.querySelectorAll("li.completed").length
 		if (completedCounter === 0) {
 			clearCompletedElement.style.display = "none"
@@ -104,8 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 	clearCompletedElement.addEventListener("click", (event) => {
+
+		// alle erledigten ToDo (Listenelelemente holen):
 		const completedLiElements = todoListElement.querySelectorAll("li.completed")
 		for(const completedLiElement of completedLiElements) {
+			// jedes einzelne Element löschen:
 			completedLiElement.remove()
 		}
 
