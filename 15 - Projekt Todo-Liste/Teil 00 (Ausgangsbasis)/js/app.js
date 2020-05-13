@@ -12,19 +12,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const fieldInputs = document.getElementsByClassName("new-todo")
           // über "X" wird das jeweilige Element gelöscht.
     const closeButtons = document.querySelectorAll("[class='destroy']")
-
     /* funktioniert: */
     const liElements = document.getElementsByTagName("li")
 
-    const removeLiElement = (liElement) => {
-        liElement.remove()
-    }
+    // ItemLeft ist ein Array. Damit muss das Element (hier 0) gewählt werden
+    const ItemLeft = document.getElementById("anzahl")
+    
+    let currentCounter = parseInt(ItemLeft.innerText, 10)
 
+    const removeLiElement = (liElement) => {
+      liElement.remove()
+    }
+    for (const closeButton of closeButtons) {
+      closeButton.addEventListener("click", (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        for (const liElement of liElements) {
+          liElement.addEventListener("click", () => {
+          removeLiElement(liElement)
+          currentCounter --
+          ItemLeft.innerText = currentCounter
+          })  
+        }
+      })
+    } 
+    /*
     for (const liElement of liElements) {
         liElement.addEventListener("click", () => {
           removeLiElement(liElement)
+          currentCounter --
+          ItemLeft[0].innerText = currentCounter
       })      
     }
+    */
     
     /* das funktioniert auch, aber nicht bei neuen Todos (Remove Todo):  
     for (const closeButton of closeButtons) {
@@ -39,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fieldInput.addEventListener("keypress", (event) => {
         // console.log("fieldInputs: ", fieldInputs)
         // console.log(event)
+        // console.log("ItemLeft: ", ItemLeft)
         if (event.keyCode === KEY_ENTER) {
           // alert("Enter wurde gedrückt!")
           // Erst das Listenelement komplett erstellen
@@ -75,10 +96,14 @@ document.addEventListener("DOMContentLoaded", () => {
           // strongElement.appendChild(document.createTextNode("Hallo Welt"))
           
           ulElement.appendChild(liElement)
+          currentCounter ++
+          ItemLeft.innerText = currentCounter
 
           /* das funktioniert: */
           liElement.addEventListener("click", () => {
             removeLiElement(liElement)
+            currentCounter --
+            ItemLeft.innerText = currentCounter
           }) 
                 
         }
