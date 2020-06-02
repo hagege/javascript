@@ -49,22 +49,30 @@ const fs = require("fs")
 
 const rocketModule = {
   launches: [],
-  loadLaunches: () => {
+  loadLaunches: function() {
     if (this.launches.length === 0) {
       console.log("Lese Raketenstarts ein...")
-
+      
       fs.readFile(
         __dirname + "/spacex/launches.json", 
         {encoding: "utf-8"}, 
-        function(err, data) {
+        (err, data) => {
           this.launches = JSON.parse(data)
         })
+            
+     /*
+     fs.readFile(
+        __dirname + "/spacex/launches.json", 
+        {encoding: "utf-8"}, 
+        (function(err, data) {
+          this.launches = JSON.parse(data)
+        }).bind(this))
+      */
     }
   }
 }
-
 // Kommentiere folgenden Code ein!
-// rocketModule.loadLaunches()
+rocketModule.loadLaunches()
 
 // Gebe alle Startvorgänge aus... 
 setTimeout(() => {
