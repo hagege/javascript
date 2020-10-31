@@ -35,18 +35,23 @@ let year2 = (new Date()).toLocaleString(["de", "en"], {year: "numeric"})
 ////////////////////////////////////////////////////////////////////////////
 
 // Passe den Code hier drunter an!
+function trenner() {
+    console.log("----------------------------------------------");
+}
+
 
 // Aufgabe 1
-console.log(dayOfMonth);
+console.log(dayOfMonth);                    // number
 console.log(typeof dayOfMonth);
-console.log(monthName);
+console.log(monthName);                     //string
 console.log(typeof monthName);
-console.log(year1);
+console.log(year1);                         // number
 console.log(typeof year1);
-console.log(year2);
+console.log(year2);                         // string
 console.log(typeof year2);
 
 // Aufgabe 2
+trenner();
 console.log(year1+5);
 console.log(year2+5);
 
@@ -54,6 +59,7 @@ console.log(year2+5);
 
 
 // Aufgabe 3
+trenner();
 console.log("Heute ist der " + dayOfMonth + ". " + monthName + " " + year2 );
-
+trenner();
 

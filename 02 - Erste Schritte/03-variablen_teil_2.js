@@ -6,7 +6,7 @@ let greeting = "Hallo Welt!";
 console.log(greeting);
 console.log(greeting);
 
-greeting = "Hallo Javascript!";
+greeting = "Hallo JavaScript!";
 
 // Die Variable greeting wird 2 mal ausgegeben
 console.log(greeting);
