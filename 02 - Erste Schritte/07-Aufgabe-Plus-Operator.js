@@ -36,7 +36,7 @@ let year2 = (new Date()).toLocaleString(["de", "en"], {year: "numeric"})
 
 // Passe den Code hier drunter an!
 function trenner() {
-    console.log("----------------------------------------------");
+    console.log("-".repeat(50));
 }
 
 
