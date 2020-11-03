@@ -4,6 +4,12 @@
  * Mit einem Array können wir z.B. eine komplette Teilnehmerliste
  * speichern!
  */
+
+ function ausgabe(ausgabetext){
+  console.log(ausgabetext);
+ }
+
+
 let students = [
   "Max Müller",
   "Erika Mustermann",
@@ -13,15 +19,21 @@ let students = [
 
 // Art der Variable
 console.log(typeof students);
+ausgabe("Art der Variable");
 
 // ist das ein Array?
 console.log(students instanceof Array);
 
 // Prüfen: Ist ein Element im Array vorhanden?
+ausgabe("Prüfen: Ist ein Element im Array vorhanden?");
 console.log(students.indexOf("Max Müller"))
 
 // Wenn ein Element nicht existiert -> -1!
 console.log(students.indexOf("Max Müller!"))
+
+// Elemente sortieren
+console.log(students.sort);
+console.log(students);
 
 // Wie viele Elemente sind in dem Array?
 console.log("Anzahl:", students.length);
