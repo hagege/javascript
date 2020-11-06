@@ -39,6 +39,7 @@ let english2 = [
 //    zu diesem Kurs hinzu! Verwende dazu nicht die .splice()-Funktion!
 
 // Paul ist im 2. Englischkurs
+console.log(english1.indexOf("Paul"))
 console.log(english2.indexOf("Paul"))
 // Anzahl anzeigen
 console.log("Anzahl:", english2.length)

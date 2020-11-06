@@ -21,3 +21,14 @@ let students = ["Max", "Moritz"]
 if (students.indexOf("Erika") === -1) {
   console.log("Erika nimmt noch nicht am Kurs teil!")
 }
+let teilnehmer = "Moritz";
+let position = students.indexOf(teilnehmer)
+let anzahl = students.length;
+console.log(anzahl + " Teilnehmer")
+// console.log(position);
+if (position >= 0 ) {
+  console.log(teilnehmer + " nimmt am Kurs teil!")
+}else{
+  console.log(teilnehmer + " nimmt nicht am Kurs teil!")
+}
+
