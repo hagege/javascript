@@ -21,8 +21,8 @@ while (students.length < 4) {
 }
 */
 
-let counter2 = 0
+counter = 0
 do {
-  counter2++
-  console.log(counter2)
-} while (counter2 < 5)
+  counter++
+  console.log(counter)
+} while (counter < 5)

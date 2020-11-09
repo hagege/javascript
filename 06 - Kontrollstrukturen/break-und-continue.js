@@ -4,7 +4,7 @@
 // continue überspringt den weiteren Ablauf, d. h. die Zeilen nach 7 werden übersprungen
 for (let i = 1; i <= 10; i++) {
   // continue: keine Ausgabe
-  if (i === 7) {
+  if (i === 4) {
     continue
   }
 

@@ -20,10 +20,12 @@ let students2 = ["Tobias", "Anna", "Michelle"]
 //  - Bei student = "Torsten": "Torsten ist eingeschrieben"
 //  - Bei student = "Felix": "Felix ist nicht eingeschrieben"
 
-let student = "Felix"
+let student = "Anna"
 
 // Schreibe deinen Code hier
-if (students1.indexOf(student) !== -1 || students2.indexOf(student) !== -1){
+// Alternative:
+// if (students1.indexOf(student) !== -1 || students2.indexOf(student) !== -1){
+if (students1.indexOf(student) > -1 || students2.indexOf(student) > -1){
     console.log(student + " ist eingeschrieben")
 } else {
     console.log(student + " ist nicht eingeschrieben")
