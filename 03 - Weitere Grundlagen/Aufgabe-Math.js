@@ -35,14 +35,18 @@
 //  - 0x 2 Cent-Münze
 
 let amountStr = "15,37";
+// Komma durch Punkt ersetzen, damit der String in eine Zahl umgewandelt werden kann: 
 amountStr = amountStr.replace(",", ".");
 console.log(amountStr);
+// in eine Kommazahl umwandeln:
 amountStr = parseFloat(amountStr);
 console.log(amountStr);
+// in Cent umwandeln:
 amountStr = amountStr * 100;
 console.log(amountStr);
 // 2€ Münzen
 let anzahl = Math.floor(amountStr / 200);
+// Rest ermitteln (Modulo):
 let rest = amountStr % 200;
 // console.log("Anzahl: " + anzahl);
 console.log(" - " + anzahl + "x 2€ Münze; Rest:" + rest);

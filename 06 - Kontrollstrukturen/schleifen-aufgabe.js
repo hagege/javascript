@@ -43,7 +43,7 @@ console.log(studentsAnzahl)
 let students1 = []
 let students2 = []
 for (let zaehler = 0; zaehler < studentsAnzahl; zaehler++ ){
-   if (zaehler%2 === 1){
+   if (zaehler % 2 === 1){
      students1.push(students[zaehler])
    } else {
     students2.push(students[zaehler])
@@ -86,6 +86,17 @@ let prices = [
   650,
   700
 ]
+
+// Ausgabe des Levels
+for (const level of levels) {
+  console.log("level:", level)
+}
+
+// Ausgabe des Index
+for (const i in levels) {
+  console.log("i:", i)
+}
+
 
 
 // a) Wie viel kostet es für einen Teilnehmer, die Sprache bis 

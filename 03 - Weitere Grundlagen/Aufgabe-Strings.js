@@ -49,7 +49,7 @@ console.log(shopping.slice(0,pos_pluszeichen) + shopping.slice(pos_pluszeichen +
 console.log(shopping.substr(0,pos_pluszeichen) + shopping.substr(pos_pluszeichen+3));
 
 // Aufgabe 4: Schneide die 3 Plus-Zeichen aus. Verwende dazu
-// die .replace()-Funktion!
+// die .replace()-Funktion! - wahrscheinlich die einfachste Variante:
 trenner("Aufgabe 4:");
 console.log(shopping.replace("+++",""));
 
