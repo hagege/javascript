@@ -195,6 +195,7 @@ console.log("Anzahl Studenten: ", AnzStudents)
 // Sprachkursen zurechtkommt!
 
 let NameStudent = "Jens"
+let StudentImKurs = false;
 for (const course of studentsPerCourse){
     if  (course.indexOf(NameStudent) === -1){
       console.log ("Student " + NameStudent + " ist nicht in Kurs " + course)
@@ -203,7 +204,11 @@ for (const course of studentsPerCourse){
       let position = course.indexOf(NameStudent)
       course.splice(position, 1)
       console.log ("Student " + NameStudent + " ist aus dem Kurs " + course + " ausgetragen worden.")
+      StudentImKurs = true;
     }
+}
+if (StudentImKurs === false){
+    console.log ("Es wurde kein Student mit dem Namen " + NameStudent + " in einem Kurs gefunden")
 }
 
 AnzStudents = 0
